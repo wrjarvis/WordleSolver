@@ -12,7 +12,7 @@ def test(word_list):
         print(f'Next Guess: {new_word}')
         result = compare_words(new_word, guess_word)
         print(result)
-        if result == [2, 2, 2, 2, 2]:
+        if result == 'xxxxx':
             print(f'SOLVED! It took {n_guesses} guesses')
             break
         n_guesses = n_guesses + 1
@@ -21,10 +21,10 @@ def test(word_list):
 
 
 WordFileName = 'ukenglish.txt'
-WordList = read_word_file(WordFileName)
+WordList = read_word_file(WordFileName, 5)
 
 NGuesses = []
-for i in range(1000):
+for i in range(100):
     NGuesses.append(test(WordList))
 print(f'Mean Guesses: {statistics.mean(NGuesses)}')
 
